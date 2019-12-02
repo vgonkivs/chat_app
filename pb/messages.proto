@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package pb;
+
+
+message Message {
+     // Specifies command that application can handle
+     enum Command {
+          NONE = 0;
+          LIST = 1;
+          ACCOUNT = 2;
+          CHANGE_NAME = 3;
+          PING = 4;
+          EXIT = 5;
+          COMMON = 6;
+     }
+     string from = 1;
+     string to = 2;
+     Command command = 3;
+     bytes content = 4;
+}
